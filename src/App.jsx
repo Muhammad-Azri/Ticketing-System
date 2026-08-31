@@ -1,6 +1,6 @@
 // import { useState } from "react";
 
-import { } from "lucide-react";
+import { CalendarDays, Upload } from "lucide-react";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 
@@ -49,6 +49,28 @@ const App = () => {
       <div className="bg-mauve-100 w-full border-2 border-mauve-100">
         {/* CONTAINER TOPBAR */}
         <TopBar />
+        <div>
+          <div className="flex justify-between p-4 items-start">
+            <div className="flex flex-col">
+              <span className="text-[40px] font-semibold">Admin Dashboard</span>
+              <span className="text-[16px]">Monitor your support ticket system with real-time data</span>
+            </div>
+            <div className="flex gap-2 items-start">
+              {/* Button Date */}
+              <button className="flex text-xs items-center gap-3 border border-gray-200 rounded-md px-4 py-3 bg-white text-gray-600 shadow-sm">
+                {/* Icon Calendar */}
+                <CalendarDays className="text-xs" />
+                <span>Sept 30, 2025 - Oct 4, 2025</span>
+              </button>
+              {/* Button Export */}
+              <button className="flex text-xs items-center gap-3 border border-gray-200 rounded-md px-4 py-3 bg-white text-gray-600 shadow-sm">
+                {/* Icon Upload */}
+                <Upload className="text-xs"/>
+                <span>Export</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ const topbar = () => {
                 </div>
                 <div className="flex bg-green-600 hover:bg-green-700 rounded-md w-40 h-10 justify-center text-white p-1 gap-1 items-center cursor-pointer">
                     <Plus />
-                    <button className="cursor-pointer">Add Ticket</button>
+                    <button className="cursor-pointer border-none">Add Ticket</button>
                 </div>
                 <div className="flex gap-2">
                     <CircleUser />
