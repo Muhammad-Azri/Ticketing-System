@@ -5,12 +5,10 @@ import {
     // YAxis,
     // CartesianGrid,
     // Tooltip,
-    ResponsiveContainer,
-    PieChart,
-    Pie,
-    Sector,
+
 } from "recharts";
-import ToolBar from "./ToolBar";
+import MonthPicker from "./MonthPicker";
+
 
 const data = [
     {
@@ -38,102 +36,14 @@ const data = [
 console.log(data)
 
 
-const TicketCharts = () => {
+const TicketCharts = ({chart=null, title= ""}) => {
     return (
-        <div className="w-fit h-fit rounded-2xl border border-gray-200 bg-white p-6 flex flex-col gap-1">
+        <div className="w-fit h-[380px] rounded-2xl border border-gray-200 bg-white p-6 flex flex-col gap-1">
             <div className="flex items-center justify-between">
-                <h2>Tickets Volume</h2>
-                <ToolBar title="September, 2026" />
+                <span>{title}</span>
+                <MonthPicker />
             </div>
-            <div className="relative mx-auto  h-[320px] w-[350px] max-w-[400px]">
-                <ResponsiveContainer width="100%" height="100%" >
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            dataKey="ticket"
-                            nameKey="name"
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={65}
-                            outerRadius={115}
-                            paddingAngle={0}
-                            stroke="none"
-                            shape={(props) => {
-                                const {
-                                    cx,
-                                    cy,
-                                    innerRadius,
-                                    outerRadius,
-                                    startAngle,
-                                    endAngle,
-                                    index,
-                                } = props;
-
-                                return (
-                                    <Sector
-                                        cx={cx}
-                                        cy={cy}
-                                        innerRadius={innerRadius}
-                                        outerRadius={outerRadius}
-                                        startAngle={startAngle}
-                                        endAngle={endAngle}
-                                        fill={data[index].color}
-                                    />
-                                );
-                            }}
-                        >
-
-                        </Pie>
-                    </PieChart>
-                </ResponsiveContainer>
-
-                <div className="absolute inset-16 flex items-center justify-center">
-                    <div className="text-center">
-
-                        <div className="text-3xl font-bold text-gray-800">
-                            2548
-                        </div>
-
-                        <div className="text-sm text-gray-500">
-                            Visitors
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 border p-2">
-
-                {data.map((item) => (
-                    <div
-                        key={item.name}
-                        className="flex items-center justify-between gap-2"
-                    >
-
-                        <div className="flex items-center gap-2">
-
-                            <span
-                                className="h-3 w-3 rounded-full"
-                                style={{
-                                    backgroundColor: item.color,
-                                }}
-                            />
-
-                            <span className="text-sm text-gray-700">
-                                {item.name}
-                            </span>
-
-                        </div>
-
-                        <span className="text-sm font-medium text-gray-800">
-                            {item.ticket}%
-                        </span>
-
-                    </div>
-                ))}
-
-            </div>
-
+            {chart}
         </div>
     )
 }

@@ -2,6 +2,8 @@ import { CalendarDays, TrendingUp, Upload, } from "lucide-react";
 import ToolBar from "./components/ToolBar";
 import Cards from "./components/Cards";
 import TicketCharts from "./components/TicketCharts";
+import PieCharts from "./components/PieCharts";
+import BarCharts from "./components/BarCharts";
 
 const Dashboard = () => {
     return (
@@ -22,9 +24,9 @@ const Dashboard = () => {
                 <Cards icon={<TrendingUp className="text-green-400 text-[8px]"/>} title="in Procces Tickets" number={41} status="Up from last hour" symbol="17%"/>
                 <Cards icon={<TrendingUp className="text-green-400 text-[8px]"/>} title="Closed Tickets" number={45} status="Up from last hour" symbol="17%"/>
             </div>
-            <div className="flex justify-between h-fit">
-                <TicketCharts />
-                <TicketCharts />
+            <div className="flex gap-4 h-fit w-full justify-between">
+                <TicketCharts chart={<PieCharts/>} title="Tickets Volumes" />
+                <TicketCharts chart={<BarCharts/>} title="Response Time Trend"/>
 
             </div>
         </div>
