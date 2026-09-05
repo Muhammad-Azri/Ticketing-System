@@ -35,8 +35,8 @@ const PieCharts = () => {
                         nameKey="name"
                         cx="50%"
                         cy="50%"
-                        innerRadius={45}
-                        outerRadius={90}
+                        innerRadius={48}
+                        outerRadius={100}
                         paddingAngle={0}
                         stroke="none"
                         shape={(props) => {
@@ -84,7 +84,7 @@ const PieCharts = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2 p-2 ">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-2 p-4 mx-auto w-fit">
 
                 {data.map((item) => (
                     <div

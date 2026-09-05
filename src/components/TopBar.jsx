@@ -2,7 +2,7 @@ import { Bell, CircleUser, Plus, Search, Sun } from "lucide-react"
 
 const topbar = () => {
     return (
-        <div className="flex justify-between p-5 bg-white items-center max-w-[1000px]">
+        <div className="flex justify-between p-5 bg-white items-center sticky top-0 z-50">
             <div>
                 <span>Dashboard</span>
             </div>

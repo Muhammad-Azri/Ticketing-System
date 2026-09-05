@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const MonthPicker = () => {
+const MonthPicker = ({icon=null}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedMonth, setSelectedMonth] = useState({
         month: 8,
@@ -22,7 +22,7 @@ const MonthPicker = () => {
         "December",
     ];
 
-    const handleSelect = (month, year) => {
+    const handleSelect = (month, year ) => {
         setSelectedMonth({
             month,
             year,
@@ -32,12 +32,12 @@ const MonthPicker = () => {
     };
 
     return (
-        <div className="relative">
+        <div className="relative flex ">
             {/* Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50"
-            >
+            > {icon}
                 <span>
                     {months[selectedMonth.month]} {selectedMonth.year}
                 </span>

@@ -43,11 +43,11 @@ const App = () => {
     //   <button onClick={tampilAngka}>Tambah</button>
     // </div>
     // 
-    <div className="flex">
+    <div className="flex h-dvh overflow-hidden">
       {/* SIdebar */}
       <SideBar />
 
-      <div className="bg-mauve-100 w-full border-2 border-mauve-100">
+      <div className="bg-mauve-100 w-full border-2 border-mauve-100 overflow-y-auto">
         {/* CONTAINER TOPBAR */}
         <TopBar />
         {/* Dashboard */}
