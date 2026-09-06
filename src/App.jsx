@@ -43,7 +43,7 @@ const App = () => {
     //   <button onClick={tampilAngka}>Tambah</button>
     // </div>
     // 
-    <div className="flex h-dvh overflow-hidden">
+    <div className="flex h-dvh ">
       {/* SIdebar */}
       <SideBar />
 

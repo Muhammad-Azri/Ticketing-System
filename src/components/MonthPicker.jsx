@@ -32,7 +32,7 @@ const MonthPicker = ({icon=null}) => {
     };
 
     return (
-        <div className="relative flex ">
+        <div className="relative flex">
             {/* Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -42,7 +42,7 @@ const MonthPicker = ({icon=null}) => {
                     {months[selectedMonth.month]} {selectedMonth.year}
                 </span>
 
-                <svg
+                <div
                     className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""
                         }`}
                     fill="none"
@@ -55,12 +55,12 @@ const MonthPicker = ({icon=null}) => {
                         strokeWidth={2}
                         d="m6 9 6 6 6-6"
                     />
-                </svg>
+                </div>
             </button>
 
             {/* Dropdown */}
             {isOpen && (
-                <div className="absolute right-0 z-50 mt-2 w-[280px] rounded-lg border border-gray-200 bg-white p-4 shadow-lg">
+                <div className="absolute right-0 z-50 mt-2 w-70 rounded-lg border border-gray-200 bg-white p-4 shadow-lg">
 
                     {/* Header */}
                     <div className="mb-4 flex items-center justify-between">

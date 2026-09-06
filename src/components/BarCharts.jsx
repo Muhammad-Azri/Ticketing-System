@@ -26,7 +26,7 @@ const data = [
 
 const BarCharts = () => {
     return (
-        <div className="h-72 w-[450px]">
+        <div className="h-72 w-112.5">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
