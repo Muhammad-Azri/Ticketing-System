@@ -26,7 +26,7 @@ const data = [
 
 const PieCharts = () => {
     return (
-        <div className="relative mx-auto h-[230px] w-full">
+        <div className="relative mx-auto h-57.5 w-full">
             <ResponsiveContainer width="100%" height="100%" >
                 <PieChart>
                     <Pie

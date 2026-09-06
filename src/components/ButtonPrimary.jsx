@@ -1,5 +1,5 @@
 
-const ButtonPrimary = ({title="", icon=null, variant=""})=> {
+const ButtonPrimary = ({title="", icon=null})=> {
     return(
         <div className="flex  bg-green-600 hover:bg-green-700 rounded-md justify-center text-white p-2 gap-1 items-center cursor-pointer">
                     {icon}

@@ -37,7 +37,7 @@ console.log(data)
 
 const TicketCharts = ({ chart = null, title = "", icon = null }) => {
     return (
-        <div className="w-full h-[380px] rounded-2xl border border-gray-200 bg-white p-6 flex flex-col gap-1">
+        <div className="w-full h-95 rounded-2xl border border-gray-200 bg-white p-6 flex flex-col gap-1">
             <div className="flex items-center justify-between">
                 <span className="font-semibold">{title}</span>
                 {icon}
