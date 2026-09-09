@@ -1,14 +1,11 @@
 import { CalendarDays, TrendingUp, Upload, } from "lucide-react";
-import Cards from "./components/Cards";
-import TicketCharts from "./components/TicketCharts";
 import PieCharts from "./components/PieCharts";
 import BarCharts from "./components/BarCharts";
 import MonthPicker from "./components/MonthPicker";
 import ListTable from "./components/ListTable";
 import ButtonSecondary from "./components/ButtonSecondary";
-
-// 1. Button di topbar sama button export dibikin jadi 1 Component, dibedain pake variant (text nya ditaro di children)
-// 2. 
+import Card from "./components/Card";
+import StatCard from "./components/StatCard";
 
 const Dashboard = () => {
     return (
@@ -26,22 +23,21 @@ const Dashboard = () => {
             </div>
             <div className="flex  gap-4 justify-between ">
                 {/* Nanti kita looping */}
-                <Cards icon={<TrendingUp className="text-green-400 text-[8px]" />} title="Open Tickets" number={52} status="Up from last hour" symbol="15%" />
-                <Cards icon={<TrendingUp className="text-green-400 text-[8px]" />} title="New Tickets" number={36} status="Up from last hour" symbol="15%" />
-                <Cards icon={<TrendingUp className="text-green-400 text-[8px]" />} title="in Procces Tickets" number={41} status="Up from last hour" symbol="17%" />
-                <Cards icon={<TrendingUp className="text-green-400 text-[8px]" />} title="Closed Tickets" number={45} status="Up from last hour" symbol="17%" />
+                <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="Open Tickets" number={52} status="Up from last hour" symbol="15%" />
+                <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="New Tickets" number={36} status="Up from last hour" symbol="15%" />
+                <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="in Procces Tickets" number={41} status="Up from last hour" symbol="17%" />
+                <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="Closed Tickets" number={45} status="Up from last hour" symbol="17%" />
             </div>
             <div className="flex gap-4 h-fit w-full justify-between ">
                 {/* Card ini dan atas, bakal kita jadiin 1 component */}
-                <TicketCharts chart={<PieCharts />} title="Tickets Volumes" icon={<MonthPicker />} />
+                <Card chart={<PieCharts />} title="Tickets Volumes" action={<MonthPicker />} />
                 {/* Nama props icon bisa diganti jadi lebih intuitive */}
-                <TicketCharts chart={<BarCharts />} title="Response Time Trend" icon={<MonthPicker />} />
+                <Card chart={<BarCharts />} title="Response Time Trend" action={<MonthPicker />} />
             </div>
-            <TicketCharts chart={<ListTable />} title="Latest Tickets" />
+            <Card chart={<ListTable />} title="Latest Tickets" />
 
         </div>
     )
 }
-
 
 export default Dashboard;
