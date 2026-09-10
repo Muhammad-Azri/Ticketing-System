@@ -1,6 +1,6 @@
 const StatCard = ({
     title = "",
-    number = 0,
+    number = "",
     icon = null,
     status = "",
     symbol = ""

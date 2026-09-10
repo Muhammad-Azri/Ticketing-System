@@ -3,7 +3,9 @@
 import {} from "lucide-react";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
-import Dashboard from "./Dashboard";
+// import Requests from "./components/TicketTopics/Requests";
+import AssignmentPage from "./components/TicketAssignment/AssignmentPage";
+// import Dashboard from "./Dashboard";
 
 
 const App = () => {
@@ -50,8 +52,15 @@ const App = () => {
       <div className="bg-mauve-100 w-full border-2 border-mauve-100 overflow-y-auto">
         {/* CONTAINER TOPBAR */}
         <TopBar />
-        {/* Dashboard */}
-        <Dashboard />
+        
+        {/* DASHBOARD */}
+        {/* <Dashboard/> */}
+
+        {/* TICKET TOPICS */}
+        {/* <Requests/> */}
+
+        {/* tICKET ASSIGNMENT */}
+        <AssignmentPage/>
       </div>
     </div>
   )
