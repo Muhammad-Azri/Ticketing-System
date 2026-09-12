@@ -3,9 +3,9 @@
 import {} from "lucide-react";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
-// import Requests from "./components/TicketTopics/Requests";
+import Requests from "./components/TicketTopics/Requests";
 import AssignmentPage from "./components/TicketAssignment/AssignmentPage";
-// import Dashboard from "./Dashboard";
+import Dashboard from "./Dashboard";
 
 
 const App = () => {
@@ -54,10 +54,10 @@ const App = () => {
         <TopBar />
         
         {/* DASHBOARD */}
-        {/* <Dashboard/> */}
+        <Dashboard/>
 
         {/* TICKET TOPICS */}
-        {/* <Requests/> */}
+        <Requests/>
 
         {/* tICKET ASSIGNMENT */}
         <AssignmentPage/>
