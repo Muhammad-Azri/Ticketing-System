@@ -6,7 +6,7 @@ const StatCard = ({
     symbol = ""
 }) => {
     return (
-        <div className="flex flex-col bg-white w-full p-2 rounded-2x1">
+        <div className="flex flex-col w-full rounded-2xl border-gray-200 bg-white p-6 gap-1">
             <span className="text-[18px] text-gray-500 font-semibold">{title}</span>
             <span className="text-[30px] font-bold">{number}</span>
             <div className="flex gap-2 text-[16px]">

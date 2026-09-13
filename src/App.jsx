@@ -1,71 +1,32 @@
-// import { useState } from "react";
 
-import {} from "lucide-react";
-import SideBar from "./components/SideBar";
-import TopBar from "./components/TopBar";
-import Requests from "./components/TicketTopics/Requests";
-import AssignmentPage from "./components/TicketAssignment/AssignmentPage";
-import Dashboard from "./Dashboard";
-
+import { BrowserRouter, Route, Routes } from 'react-router'
+import DashboardPage from './pages/dashboard/DashboardPage'
+import Requests from './components/TicketTopics/Requests';
+import AssignmentPage from './components/TicketAssignment/AssignmentPage';
+import Layout from './components/layout';
 
 const App = () => {
-  // const [name, setName] = useState("Dani");
-  // const [angka, setAngka] = useState(0);
-  // const [hasil, setHasil] = useState()
-
-  // const ubahNama = () => {
-  //   setName(oldName => oldName + " Musang");
-  // }
-
-  // const tambahAngka = () => {
-  //   setAngka(angkaAwal => angkaAwal +1)
-  // }
-
-  // const kurangAngka = () => {
-  //   setAngka(angkaAwal => angkaAwal -1)
-  // }
-
-  // const change = (e) => {
-  //   setHasil(Number(e.target.value));
-  // }
-
-  // const tampilAngka = () => {
-  //   setAngka(angkaAwal => angkaAwal + hasil ) 
-  // }
 
   return (
-    // <div>
-    //   <h1>Hello {name}</h1>
-    //   <button onClick={ubahNama}> Ubah Nama</button>
-    //   <h1>{angka}</h1>
-    //   <button onClick={tambahAngka}>+</button>
-    //   <button onClick={kurangAngka}>-</button>
-    //   <br />
-    //   <input onChange={change} type="number" placeholder="Masukkan nilai tambah"></input>
-    //   <button onClick={tampilAngka}>Tambah</button>
-    // </div>
-    // 
-    <div className="flex h-dvh ">
-      {/* SIdebar */}
-      <SideBar />
-
-      <div className="bg-mauve-100 w-full border-2 border-mauve-100 overflow-y-auto">
-        {/* CONTAINER TOPBAR */}
-        <TopBar />
-        
-        {/* DASHBOARD */}
-        <Dashboard/>
-
-        {/* TICKET TOPICS */}
-        <Requests/>
-
-        {/* tICKET ASSIGNMENT */}
-        <AssignmentPage/>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+       <Route element={<Layout/>}>
+         <Route index element={<DashboardPage />} />
+        <Route path="Ticket-Topics">
+          <Route index element={<Requests />} />
+          {/* <Route path=":city" element={<span>City</span>} />
+          <Route path="Jakarta" element={<span>Persija</span>} /> */}
+        </Route>
+        <Route path="inbox">
+          <Route index element={<p>Inbox</p>} />
+        </Route>
+        <Route path="Ticket-Assignment">
+          <Route index element={<AssignmentPage />} />
+        </Route>
+       </Route>
+      </Routes>
+    </BrowserRouter>
   )
 };
-
-
 
 export default App;

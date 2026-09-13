@@ -1,5 +1,5 @@
 import { House, Mail, Ticket, Tickets, User } from "lucide-react"
-import Menu from "./Menu";
+import Menu from "../Menu";
 
 const SideBar = () => {
     return (
@@ -12,10 +12,10 @@ const SideBar = () => {
         </div>
         {/* *nanti kita looping */}
         <div className="flex flex-col gap-4 p-5">
-          <Menu title="Dashboard" icon={<House size={20}/>}/>
-          <Menu title="Inbox" icon={<Mail size={20}/>}/>
-          <Menu title="Ticket Asignment" icon={<User size={20}/>}/>
-          <Menu title="Ticket Topics" icon={<Ticket size={20}/>}/>
+          <Menu to="/" title="Dashboard" icon={<House size={20}/>}/>
+          <Menu to="Inbox" title="Inbox" icon={<Mail size={20}/>}/>
+          <Menu to="Ticket-Assignment" title="Ticket Assignment" icon={<User size={20}/>}/>
+          <Menu to="Ticket-Topics" title="Ticket Topics" icon={<Ticket size={20}/>}/>
         </div>
        
 

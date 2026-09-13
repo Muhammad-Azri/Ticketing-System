@@ -1,10 +1,10 @@
 import { Bell, Plus, Search, Sun } from "lucide-react"
-import SearchInput from "./SearchInput";
-import ButtonPrimary from "./ButtonPrimary";
-import UserProfile from "./UserProfile";
+import SearchInput from "../SearchInput";
+import UserProfile from "../UserProfile";
+import Button from "../Button";
 
 
-const topbar = () => {
+const TopBar = () => {
     return (
         <div className="flex justify-between p-5 bg-white items-center sticky top-0 z-50">
             {/* Div nya dihapus langsung span aja */}
@@ -18,7 +18,7 @@ const topbar = () => {
                     <Sun />
                 </div>
                 {/* Bikin jadi component button dengan variant primary,secondary dll */}
-                <ButtonPrimary title="Add Ticket" icon={<Plus/>}/>
+                <Button variant="primary" children="Add Ticket" icon={<Plus/>}/>
                 {/* Dibikin jadi component UserProfile (simpan kedalam folder Topbar) */}
                 <UserProfile title="Anak Magang"/>
             </div>
@@ -26,4 +26,4 @@ const topbar = () => {
     )
 }
 
-export default topbar;
+export default TopBar;

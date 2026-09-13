@@ -1,7 +1,8 @@
 import MonthPicker from "../MonthPicker";
 import ListTable from "../ListTable";
 import Card from "../Card";
-import ButtonSecondary from "../ButtonSecondary";
+import Button from "../Button";
+import { Plus } from "lucide-react";
 
 const Requests = ()=> {
     return(
@@ -10,7 +11,7 @@ const Requests = ()=> {
                 <span className="text-[30px] font-semibold">Requests</span>
                 <MonthPicker title="Sort by Date"/>
             </div>
-           <Card action={<ButtonSecondary title="Create Ticket +"/>} chart={<ListTable />} title="Latest Tickets" />
+           <Card action={<Button variant="secondary" children="Create Ticket" icon={<Plus/>}/>} chart={<ListTable />} title="Latest Tickets" />
         </div>
     )
 }
