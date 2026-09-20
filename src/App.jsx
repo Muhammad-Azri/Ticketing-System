@@ -12,7 +12,7 @@ const App = () => {
       <Routes>
        <Route element={<Layout/>}>
          <Route index element={<DashboardPage />} />
-        <Route path="Ticket-Topics">
+        <Route path="ticket-topics">
           <Route index element={<Requests />} />
           {/* <Route path=":city" element={<span>City</span>} />
           <Route path="Jakarta" element={<span>Persija</span>} /> */}
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="inbox">
           <Route index element={<p>Inbox</p>} />
         </Route>
-        <Route path="Ticket-Assignment">
+        <Route path="ticket-assignment">
           <Route index element={<AssignmentPage />} />
         </Route>
        </Route>

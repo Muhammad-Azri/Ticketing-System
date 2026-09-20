@@ -14,8 +14,8 @@ const SideBar = () => {
         <div className="flex flex-col gap-4 p-5">
           <Menu to="/" title="Dashboard" icon={<House size={20}/>}/>
           <Menu to="Inbox" title="Inbox" icon={<Mail size={20}/>}/>
-          <Menu to="Ticket-Assignment" title="Ticket Assignment" icon={<User size={20}/>}/>
-          <Menu to="Ticket-Topics" title="Ticket Topics" icon={<Ticket size={20}/>}/>
+          <Menu to="ticket-assignment" title="Ticket Assignment" icon={<User size={20}/>}/>
+          <Menu to="ticket-topics" title="Ticket Topics" icon={<Ticket size={20}/>}/>
         </div>
        
 

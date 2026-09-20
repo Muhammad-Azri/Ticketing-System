@@ -6,6 +6,7 @@ import Card from "../../components/Card";
 import ListTable from "../../components/ListTable";
 import BarCharts from "./BarCharts";
 import PieCharts from "./PieCharts";
+import TicketForm from "../../components/form/TicketForm";
 
 
 const Content = () => {
@@ -19,10 +20,10 @@ const Content = () => {
                 </div>
                 <div className="flex gap-2 items-start justify-center ">
                     <MonthPicker icon={<CalendarDays />} />
-                    <Button variant="secondary" children="Export" icon={<Upload size={24}/>}/>
+                    <Button variant="secondary" children="Export" icon={<Upload size={24} />} />
                 </div>
             </div>
-            <div className="flex  gap-4 justify-between ">
+            <div className="flex gap-4 justify-between ">
                 {/* Nanti kita looping */}
                 <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="Open Tickets" number={52} status="Up from last hour" symbol="15%" />
                 <StatCard icon={<TrendingUp className="text-green-400 text-[8px]" />} title="New Tickets" number={36} status="Up from last hour" symbol="15%" />
@@ -36,8 +37,11 @@ const Content = () => {
                 <Card chart={<BarCharts />} title="Response Time Trend" action={<MonthPicker />} />
             </div>
             <Card chart={<ListTable />} title="Latest Tickets" />
-
+            <div className="min-h-screen bg-gray-50 p-6">
+                <TicketForm />
+            </div>
         </div>
+        
     )
 }
 

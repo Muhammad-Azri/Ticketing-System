@@ -1,6 +1,6 @@
 
-import AssignmentPage from "../../components/TicketAssignment/AssignmentPage";
-import Requests from "../../components/TicketTopics/Requests";
+// import AssignmentPage from "../../components/TicketAssignment/AssignmentPage";
+// import Requests from "../../components/TicketTopics/Requests";
 import Content from "./content";
 
 
@@ -11,10 +11,10 @@ const DashboardPage = () => {
         <Content/>
 
         {/* TICKET TOPICS */}
-        <Requests/>
+        {/* <Requests/> */}
 
         {/* tICKET ASSIGNMENT */}
-        <AssignmentPage/>
+        {/* <AssignmentPage/> */}
    </div>
   )
 };

@@ -1,47 +1,32 @@
 import Card from "./Card";
 
-const tickets = [
-  {
-    id: "ABC34",
-    name: "Liam Smith",
-    email: "liam@gmail.com",
-    subject: "PC not turning on",
-    created: "30 min ago",
-    status: "New",
-  },
-  {
-    id: "DEF56",
-    name: "Olivia Brown",
-    email: "olivia@gmail.com",
-    subject: "Desktop won't boot up",
-    created: "1 hour ago",
-    status: "Open",
-  },
-  {
-    id: "JKL90",
-    name: "Sophia Wilson",
-    email: "sophia@gmail.com",
-    subject: "Phone won't turn on",
-    created: "3 hours ago",
-    status: "In Progress",
-  },
-  {
-    id: "MNO12",
-    name: "James Taylor",
-    email: "james@gmail.com",
-    subject: "Monitor is blank",
-    created: "4 hours ago",
-    status: "Close",
-  },
-  {
-    id: "GHI78",
-    name: "Noah Davis",
-    email: "noah@gmail.com",
-    subject: "Tablet is unresponsive",
-    created: "2 hours ago",
-    status: "Open",
-  },
-]
+// const ListTicket = [
+//   {
+//     id: "abcd",
+//     name: "Ujang",
+//     email: "ujang@email.com",
+//     subject: "ini kenapa ya bang",
+//     created: "00:00",
+//     status: "New",
+//   },
+//   {
+//     id: "efgh",
+//     name: "Ujang",
+//     email: "ujang@email.com",
+//     subject: "ini kenapa ya bang",
+//     created: "00:00",
+//     status: "New",
+//   },
+//   {
+//     id: "jklm",
+//     name: "Ujang",
+//     email: "ujang@email.com",
+//     subject: "ini kenapa ya bang",
+//     created: "00:00",
+//     status: "New",
+//   },
+  
+// ]
 
 const statusStyle = {
   New: "bg-blue-50 text-blue-600",
@@ -50,7 +35,7 @@ const statusStyle = {
   Close: "bg-green-50 text-green-600",
 };
 
-const ListTable = () => {
+const ListTable = ({ListTicket=[]}) => {
   return (
     <Card
       chart={
@@ -72,11 +57,11 @@ const ListTable = () => {
           {/* DATA */}
           <div className="min-w-187.5">
 
-            {tickets.map((ticket) => (
+            {ListTicket.map((ticket) => (
 
               <div
                 key={ticket.id}
-                className="grid grid-cols-6 items-center px-4 py-3 text-sm text-gray-600"
+                className="grid grid-cols-6 items-center justify-center px-4 py-3 text-sm text-gray-600"
               >
 
                 <span>
@@ -87,11 +72,11 @@ const ListTable = () => {
                   {ticket.name}
                 </span>
 
-                <span>
+                <span className="truncate">
                   {ticket.email}
                 </span>
 
-                <span>
+                <span className="truncate">
                   {ticket.subject}
                 </span>
 
