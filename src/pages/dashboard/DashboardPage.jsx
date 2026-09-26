@@ -1,24 +1,14 @@
+import Dashboard from "@/features/dashboard/Dashboard";
 
-// import AssignmentPage from "../../components/TicketAssignment/AssignmentPage";
-// import Requests from "../../components/TicketTopics/Requests";
-import Content from "./content";
 
 
 const DashboardPage = () => {
   return (
-   <div>
-     {/* DASHBOARD */}
-        <Content/>
-
-        {/* TICKET TOPICS */}
-        {/* <Requests/> */}
-
-        {/* tICKET ASSIGNMENT */}
-        {/* <AssignmentPage/> */}
-   </div>
+    <div>
+      <Dashboard />
+    </div>
   )
 };
 
 export default DashboardPage;
 
- 

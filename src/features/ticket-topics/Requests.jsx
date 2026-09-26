@@ -1,9 +1,10 @@
-import MonthPicker from "../MonthPicker";
-import ListTable from "../ListTable";
-import Card from "../Card";
-import Button from "../Button";
+
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import ListTable from "@/components/ListTable";
+import MonthPicker from "@/components/MonthPicker";
+import TicketForm from "@/features/ticket-topics/TicketForm";
 import { Plus } from "lucide-react";
-import TicketForm from "../form/TicketForm";
 import { useState } from "react";
 
 const Requests = () => {

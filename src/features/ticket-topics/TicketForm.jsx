@@ -1,8 +1,7 @@
+import Button from "@/components/Button";
 import { useState } from "react";
-import Button from "../Button";
 
-
-const TicketForm = ({ onClose, onAdd= ()=>{}}) => {
+const TicketForm = ({ onClose, onAdd = () => { } }) => {
     const [newForm, setNewForm] = useState({
         id: "",
         name: "",
@@ -11,20 +10,32 @@ const TicketForm = ({ onClose, onAdd= ()=>{}}) => {
         message: "",
         created: "",
         status: "New",
-    })      
+    })
 
     const onChangeForm = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
         setNewForm((prev) => {
-            return{...prev, [name]: value}
+            return { ...prev, [name]: value }
         });
         // console.log(onChangeForm)
     };
 
-    const onSubmit = ()=> {
+    const onSubmit = () => {
         console.log(newForm)
-        onAdd({...newForm, id: Date.now(), created: Date.now})
+        const today = new Date();
+
+        const created = `${String(today.getDate()).padStart(2, "0")}-${String(
+            today.getMonth() + 1
+        ).padStart(2, "0")}-${today.getFullYear()}`;
+
+        const ticket = {
+            ...newForm,
+            id: Date.now(),
+            created,
+        };
+        // onAdd({ ...newForm, id: Date.now()})
+        onAdd(ticket)
         onClose()
     }
 
@@ -47,7 +58,7 @@ const TicketForm = ({ onClose, onAdd= ()=>{}}) => {
                             id="name"
                             name="name"
                             type="text"
-            
+
                             placeholder="Enter Your Name"
                             onChange={onChangeForm}
                             className="h-9 rounded-lg border border-gray-300 px-4 text-[12px] text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"

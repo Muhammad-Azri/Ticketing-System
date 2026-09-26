@@ -1,15 +1,14 @@
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import MonthPicker from "@/components/MonthPicker";
+import StatCard from "@/components/StatCard";
 import { CalendarDays, TrendingUp, Upload, } from "lucide-react";
-import MonthPicker from "../../components/MonthPicker";
-import Button from "../../components/Button";
-import StatCard from "../../components/StatCard";
-import Card from "../../components/Card";
-import ListTable from "../../components/ListTable";
-import BarCharts from "./BarCharts";
 import PieCharts from "./PieCharts";
-import TicketForm from "../../components/form/TicketForm";
+import BarCharts from "./BarCharts";
+import ListTable from "@/components/ListTable";
 
 
-const Content = () => {
+const Dashboard = () => {
     return (
         <div className=" p-4 flex flex-col gap-4 ">
             <div className="flex justify-between items-start mb-4">
@@ -37,12 +36,10 @@ const Content = () => {
                 <Card chart={<BarCharts />} title="Response Time Trend" action={<MonthPicker />} />
             </div>
             <Card chart={<ListTable />} title="Latest Tickets" />
-            <div className="min-h-screen bg-gray-50 p-6">
-                <TicketForm />
-            </div>
+            
         </div>
         
     )
 }
 
-export default Content;
+export default Dashboard;

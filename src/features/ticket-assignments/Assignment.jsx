@@ -1,8 +1,9 @@
-import { NotebookPen, Plus, Upload } from "lucide-react";
-import StatCard from "../StatCard";
-import Button from "../Button";
 
-const AssignmentPage = () => {
+import Button from "@/components/Button";
+import StatCard from "@/components/StatCard";
+import { NotebookPen, Plus, Upload } from "lucide-react";
+
+const Assignment = () => {
     return (
         <div>
             <div className="p-4 flex gap-4 justify-between ">
@@ -39,4 +40,4 @@ const AssignmentPage = () => {
     )
 }
 
-export default AssignmentPage;
+export default Assignment;

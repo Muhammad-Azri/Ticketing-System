@@ -1,10 +1,12 @@
+import Button from "@/components/Button";
+import SearchInput from "@/components/SearchInput";
+import UserProfile from "@/components/UserProfile";
 import { Bell, Plus, Search, Sun } from "lucide-react"
-import SearchInput from "../SearchInput";
-import UserProfile from "../UserProfile";
-import Button from "../Button";
+
 
 
 const TopBar = () => {
+    
     return (
         <div className="flex justify-between p-5 bg-white items-center sticky top-0 z-50">
             {/* Div nya dihapus langsung span aja */}

@@ -1,9 +1,10 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router'
-import DashboardPage from './pages/dashboard/DashboardPage'
-import Requests from './components/TicketTopics/Requests';
-import AssignmentPage from './components/TicketAssignment/AssignmentPage';
-import Layout from './components/layout';
+import Layout from './layout';
+import DashboardPage from './pages/dashboard/DashboardPage';
+import AssignmentPage from './features/ticket-assignments/Assignment';
+import RequestsPage from './pages/ticket-topics/RequestsPage';
+
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
        <Route element={<Layout/>}>
          <Route index element={<DashboardPage />} />
         <Route path="ticket-topics">
-          <Route index element={<Requests />} />
+          <Route index element={<RequestsPage />} />
           {/* <Route path=":city" element={<span>City</span>} />
           <Route path="Jakarta" element={<span>Persija</span>} /> */}
         </Route>
