@@ -8,7 +8,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
         email: "",
         subject: "",
         attachment: null,
-        message: "",
+        description: "",
         created: "",
         status: "New",
     })
@@ -100,22 +100,22 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                     />
                 </div>
 
-                {/* <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2">
                     <label
                         htmlFor="message"
                         className="text-[12px] font-medium text-gray-700"
-                    >Message
+                    >Description
                     </label>
 
                     <textarea
                         id="message"
                         rows="3"
-                        name="message"
+                        name="description"
                         onChange={onChangeForm}
                         placeholder="Describe your issue or request..."
                         className="resize-none rounded-lg border border-gray-300 px-4 py-3 text-[12px] text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                     />
-                </div> */}
+                </div>
 
                 <div className="flex flex-col gap-2">
                     <label
