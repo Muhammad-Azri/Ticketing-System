@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../../components/Card";
 
 const StatCard = ({
     title = "",
@@ -8,7 +8,7 @@ const StatCard = ({
     symbol = ""
 }) => {
     return (
-        <Card >
+        <Card>
             <span className="text-[18px] text-gray-500 font-semibold">{title}</span>
             <span className="text-[30px] font-bold">{number}</span>
             <div className="flex gap-2 text-[16px]">

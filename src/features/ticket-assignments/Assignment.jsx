@@ -1,6 +1,6 @@
 
 import Button from "@/components/Button";
-import StatCard from "@/components/StatCard";
+import StatCard from "@/features/dashboard/StatCard";
 import { NotebookPen, Plus, Upload } from "lucide-react";
 
 const Assignment = () => {
@@ -12,7 +12,7 @@ const Assignment = () => {
                     <span className="text-4">Automatically assign tickets to agents and groups based on keywords, requests or characteristics.</span>
                 </div>
                 <div className="flex gap-2 items-start justify-center ">
-                    <Button variant="secondary" children="Export" icon={<Upload size={24} />} />
+                    <Button variant="secondary" icon={<Upload size={24} />}>Export</Button>
                 </div>
             </div>
             <div className="flex  gap-4 justify-between p-4 ">
@@ -27,7 +27,7 @@ const Assignment = () => {
                     <span className="text-4">Configure automatic ticket routing based on conditions</span>
                 </div>
                  <div className="flex gap-2 items-start justify-center ">
-                    <Button variant="primary" children="New Rules" icon={<Plus size={22} />}/>
+                    <Button variant="primary" icon={<Plus size={22} />}>New Rules</Button>
                 </div>
             </div>
             <div className="flex flex-col p-4 gap-4">

@@ -1,9 +1,10 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Layout from './layout';
+import Layout from './layouts/main';
 import DashboardPage from './pages/dashboard/DashboardPage';
-import AssignmentPage from './features/ticket-assignments/Assignment';
 import RequestsPage from './pages/ticket-topics/RequestsPage';
+import InboxPage from './pages/inbox/InboxPage';
+import AssignmentPage from './pages/ticket-assignment/AssignmentPage';
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
           <Route path="Jakarta" element={<span>Persija</span>} /> */}
         </Route>
         <Route path="inbox">
-          <Route index element={<p>Inbox</p>} />
+          <Route index element={<InboxPage/>} />
         </Route>
         <Route path="ticket-assignment">
           <Route index element={<AssignmentPage />} />

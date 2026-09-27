@@ -7,6 +7,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
         name: "",
         email: "",
         subject: "",
+        attachment: null,
         message: "",
         created: "",
         status: "New",
@@ -99,7 +100,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                     />
                 </div>
 
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                     <label
                         htmlFor="message"
                         className="text-[12px] font-medium text-gray-700"
@@ -114,7 +115,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                         placeholder="Describe your issue or request..."
                         className="resize-none rounded-lg border border-gray-300 px-4 py-3 text-[12px] text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                     />
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-2">
                     <label
@@ -129,6 +130,7 @@ const TicketForm = ({ onClose, onAdd = () => { } }) => {
                     <input
                         id="attachment"
                         type="file"
+                        name="attachment"
                         className="w-full cursor-pointer rounded-lg border border-dashed border-gray-300 px-4 py-3 text-[12px] text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-green-600 file:hover:bg-green-700 file:px-4 file:py-2 file:font-medium file:text-white hover:border-blue-400 file:cursor-pointer"
                     />
 

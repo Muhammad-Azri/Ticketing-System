@@ -20,7 +20,7 @@ const TopBar = () => {
                     <Sun />
                 </div>
                 {/* Bikin jadi component button dengan variant primary,secondary dll */}
-                <Button variant="primary" children="Add Ticket" icon={<Plus/>}/>
+                <Button variant="primary" icon={<Plus/>}>Add Ticket</Button>
                 {/* Dibikin jadi component UserProfile (simpan kedalam folder Topbar) */}
                 <UserProfile title="Anak Magang"/>
             </div>
