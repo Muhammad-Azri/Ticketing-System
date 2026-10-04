@@ -4,7 +4,7 @@ import Table from "@/components/Table";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import CreateTicket from "./modal/CreateTicket";
-import DeleteTicket from "./modal/DeleteTicketModal";
+import DeleteTicket from "./modal/DeleteTicket";
 
 const TicketTable = () => {
   const [ticketList, setTicketList] = useState([]);

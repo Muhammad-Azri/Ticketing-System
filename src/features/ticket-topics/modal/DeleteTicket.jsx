@@ -1,4 +1,3 @@
-import cn from "@/utils/cn";
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
 
@@ -11,11 +10,7 @@ const DeleteTicket = ({ onDelete = () => {}, onClose = () => {} }) => {
           <Button variant="secondary" onClick={onClose}>
             Ga Jadi
           </Button>
-          <Button
-            variant="secondary"
-            className={cn("bg-red-500")}
-            onClick={onDelete}
-          >
+          <Button variant="destruction" onClick={onDelete}>
             Delete
           </Button>
         </div>

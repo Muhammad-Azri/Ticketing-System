@@ -56,6 +56,9 @@ const Table = ({ ticketList = [], onDelete = () => {} }) => {
               <th className="rounded-r-lg px-4 py-3 text-left font-medium">
                 Status
               </th>
+              <th className="rounded-r-lg px-4 py-3 text-left font-medium">
+                Action
+              </th>
             </tr>
           </thead>
 
