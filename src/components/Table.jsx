@@ -25,7 +25,7 @@ import Card from "./Card";
 //     created: "00:00",
 //     status: "New",
 //   },
-  
+
 // ]
 
 const statusStyle = {
@@ -35,7 +35,7 @@ const statusStyle = {
   Close: "bg-green-50 text-green-600",
 };
 
-const Table = ({ticketList=[]}) => {
+const Table = ({ ticketList = [] }) => {
   return (
     <Card>
       <div className="w-full overflow-x-auto">
@@ -46,21 +46,11 @@ const Table = ({ticketList=[]}) => {
               <th className="rounded-l-lg px-4 py-3 text-left font-medium">
                 Ticket ID
               </th>
-              <th className="px-4 py-3 text-left font-medium">
-                Name
-              </th>
-              <th className="px-4 py-3 text-left font-medium">
-                Email
-              </th>
-              <th className="px-4 py-3 text-left font-medium">
-                Subject
-              </th>
-              <th className="px-4 py-3 text-left font-medium">
-                Attachment
-              </th>
-              <th className="px-4 py-3 text-left font-medium">
-                Created
-              </th>
+              <th className="px-4 py-3 text-left font-medium">Name</th>
+              <th className="px-4 py-3 text-left font-medium">Email</th>
+              <th className="px-4 py-3 text-left font-medium">Subject</th>
+              <th className="px-4 py-3 text-left font-medium">Attachment</th>
+              <th className="px-4 py-3 text-left font-medium">Created</th>
               <th className="rounded-r-lg px-4 py-3 text-left font-medium">
                 Status
               </th>
@@ -74,24 +64,14 @@ const Table = ({ticketList=[]}) => {
                 key={ticket.id}
                 className="border-b text-[12px] text-gray-600"
               >
-                <td className="px-4 py-3">
-                  {ticket.id}
-                </td>
-                <td className="px-4 py-3">
-                  {ticket.name}
-                </td>
-                <td className="max-w-50 truncate px-4 py-3">
-                  {ticket.email}
-                </td>
+                <td className="px-4 py-3">{ticket.id}</td>
+                <td className="px-4 py-3">{ticket.name}</td>
+                <td className="max-w-50 truncate px-4 py-3">{ticket.email}</td>
                 <td className="max-w-50 truncate px-4 py-3">
                   {ticket.subject}
                 </td>
-                <td className="px-4 py-3">
-                  {ticket.document}
-                </td>
-                <td className="px-4 py-3">
-                  {ticket.created}
-                </td>
+                <td className="px-4 py-3">{ticket.document}</td>
+                <td className="px-4 py-3">{ticket.created}</td>
                 <td className="px-4 py-3">
                   <span
                     className={`inline-flex rounded-full px-3 py-1 text-xs ${
@@ -107,7 +87,7 @@ const Table = ({ticketList=[]}) => {
         </table>
       </div>
     </Card>
-  )
-}
+  );
+};
 
 export default Table;

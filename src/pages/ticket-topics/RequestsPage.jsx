@@ -5,7 +5,7 @@ const RequestsPage = () => {
     <div>
       <Requests />
     </div>
-  )
+  );
 };
 
 export default RequestsPage;

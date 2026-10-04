@@ -5,7 +5,7 @@ const AssignmentPage = () => {
     <div>
       <Assignment />
     </div>
-  )
+  );
 };
 
 export default AssignmentPage;

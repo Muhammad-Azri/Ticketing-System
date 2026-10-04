@@ -5,7 +5,7 @@ const InboxPage = () => {
     <div>
       <UserInbox />
     </div>
-  )
+  );
 };
 
 export default InboxPage;
