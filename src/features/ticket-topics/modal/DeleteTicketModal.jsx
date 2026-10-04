@@ -1,11 +1,8 @@
 import cn from "@/utils/cn";
-import Button from "./Button";
-import Modal from "./Modal";
+import Button from "@/components/Button";
+import Modal from "@/components/Modal";
 
 const DeleteTicket = ({ onDelete = () => {}, onClose = () => {} }) => {
-  //   const gajadi = () => {
-  //     return console.log("tombol gajadi");
-  //   };
   return (
     <Modal>
       <div className="w-full max-w-110 max-h-[95vh] rounded-2xl bg-white p-6 shadow-xl flex flex-col gap-4">

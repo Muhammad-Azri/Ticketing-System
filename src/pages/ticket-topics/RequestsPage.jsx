@@ -1,11 +1,7 @@
-import Requests from "@/features/ticket-topics/Requests";
+import TicketTopics from "@/features/ticket-topics/TicketTopics";
 
 const RequestsPage = () => {
-  return (
-    <div>
-      <Requests />
-    </div>
-  );
+  return <TicketTopics />;
 };
 
 export default RequestsPage;

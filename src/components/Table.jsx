@@ -37,7 +37,7 @@ const statusStyle = {
   Close: "bg-green-50 text-green-600",
 };
 
-const Table = ({ ticketList = [], opened = () => {}, onDelete = () => {} }) => {
+const Table = ({ ticketList = [], onDelete = () => {} }) => {
   return (
     <Card>
       <div className="w-full overflow-x-auto">
@@ -84,7 +84,7 @@ const Table = ({ ticketList = [], opened = () => {}, onDelete = () => {} }) => {
                   </span>
                 </td>
                 <td className="px-2 py-2 flex">
-                  <Button variant="secondary" onClick={opened}>
+                  <Button variant="secondary">
                     <PenBox />
                   </Button>
                   <Button
