@@ -4,16 +4,40 @@ import Table from "@/components/Table";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import TicketForm from "./TicketForm";
+import Modal from "@/components/Modal";
+import DeleteTicket from "@/components/DeleteTicketModal";
 
 const RequestTable = () => {
   const [ticketList, setTicketList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [Opened, setOpened] = useState(false);
+  const [selectedTicketId, setSelectedTicketId] = useState(null);
+
+  const onClickDelete = (id) => {
+    setSelectedTicketId(id);
+    setOpened(true);
+  };
 
   const onAddTicket = (ticket) => {
     setTicketList((prev) => {
       return [...prev, ticket];
     });
   };
+
+  const onDeleteTicket = () => {
+    setTicketList((prev) => {
+      const hasil = prev.filter((ticket) => {
+        if (ticket.id !== selectedTicketId) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      return hasil;
+    });
+    setOpened(false);
+  };
+
   return (
     <Card>
       <div className="font-semibold">
@@ -27,15 +51,27 @@ const RequestTable = () => {
             Create Ticket
           </Button>
         </div>
-        <Table ticketList={ticketList}></Table>
+        <Table
+          ticketList={ticketList}
+          opened={() => setOpened(true)}
+          onDelete={onClickDelete}
+        />
         {isModalOpen && (
-          <div className="flex items-center justify-center z-400 fixed bg-black/30 h-dvh w-full top-0 left-0">
+          <Modal>
             <TicketForm
               onClick={(e) => e.stopPropagation()}
               onClose={() => setIsModalOpen(false)}
               onAdd={onAddTicket}
             />
-          </div>
+          </Modal>
+        )}
+        {Opened && (
+          <DeleteTicket
+            gajadi={() => console.log("tombol gajadi")}
+            onClose={() => setOpened(false)}
+            onDelete={() => onDeleteTicket()}
+            onClick={() => onClickDelete()}
+          />
         )}
       </div>
     </Card>

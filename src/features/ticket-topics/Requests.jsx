@@ -19,7 +19,7 @@ const Requests = () => {
         <MonthPicker title="Sort by Date" />
       </div>
       {/* <Card action={<Button onClick={() => setIsModalOpen(true)} variant="secondary" icon={<Plus />}>Create Ticket</Button>} chart={<Table TicketList={TicketList} />} title="Latest Tickets"></Card> */}
-      <RequestTable></RequestTable>
+      <RequestTable />
 
       {/* {isModalOpen && (
                 <div className="flex items-center justify-center z-400 fixed bg-black/30 h-dvh w-full top-0 left-0">

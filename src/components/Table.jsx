@@ -1,3 +1,5 @@
+import { PenBox, Trash } from "lucide-react";
+import Button from "./Button";
 import Card from "./Card";
 
 // const ListTicket = [
@@ -35,7 +37,7 @@ const statusStyle = {
   Close: "bg-green-50 text-green-600",
 };
 
-const Table = ({ ticketList = [] }) => {
+const Table = ({ ticketList = [], opened = () => {}, onDelete = () => {} }) => {
   return (
     <Card>
       <div className="w-full overflow-x-auto">
@@ -80,6 +82,17 @@ const Table = ({ ticketList = [] }) => {
                   >
                     {ticket.status}
                   </span>
+                </td>
+                <td className="px-2 py-2 flex">
+                  <Button variant="secondary" onClick={opened}>
+                    <PenBox />
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => onDelete(ticket.id)}
+                  >
+                    <Trash />
+                  </Button>
                 </td>
               </tr>
             ))}
