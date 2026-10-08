@@ -10,6 +10,7 @@ const Button = ({
     primary: "bg-green-600 hover:bg-green-700 text-white",
     secondary: "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50",
     destruction: "bg-red-600 hover:bg-red-700 text-white",
+    login: "w-full bg-green-600 hover:bg-green-700 text-white",
   };
 
   return (

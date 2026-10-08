@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import Layout from "./layouts/main/main";
+import Layout from "./layouts/main/Layout";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import RequestsPage from "./pages/ticket-topics/RequestsPage";
-import InboxPage from "./pages/inbox/InboxPage";
 import AssignmentPage from "./pages/ticket-assignment/AssignmentPage";
+import InboxPage from "./pages/inbox/InboxPage";
+import Login from "./layouts/Login";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           <Route path="ticket-assignment">
             <Route index element={<AssignmentPage />} />
           </Route>
+        </Route>
+        <Route element={<Login />}>
+          <Route path="login"></Route>
         </Route>
       </Routes>
     </BrowserRouter>
