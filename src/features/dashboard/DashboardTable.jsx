@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import Table from "@/components/Table";
+import Table from "@/components/GeneralTabel";
 
 const DashboardTable = () => {
   return (

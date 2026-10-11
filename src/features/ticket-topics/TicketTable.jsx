@@ -1,10 +1,11 @@
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import Table from "@/components/Table";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import CreateTicket from "./modal/CreateTicket";
 import DeleteTicket from "./modal/DeleteTicket";
+import GeneralTable from "@/components/GeneralTabel";
+import Table from "@/components/Table";
 
 const TicketTable = () => {
   const [ticketList, setTicketList] = useState([]);
@@ -50,7 +51,7 @@ const TicketTable = () => {
             Create Ticket
           </Button>
         </div>
-        <Table ticketList={ticketList} onDelete={onClickDelete} />
+        <GeneralTable ticketList={ticketList} onDelete={onClickDelete} />
         {showCreateModal && (
           <CreateTicket
             onClose={() => setShowCreateModal(false)}
@@ -64,6 +65,7 @@ const TicketTable = () => {
           />
         )}
       </div>
+      <Table />
     </Card>
   );
 };
