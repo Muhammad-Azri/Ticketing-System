@@ -1,53 +1,40 @@
-const Table = () => {
-  const columns = [
-    {
-      key: "nama",
-      header: "Title",
-      cell: (value) => value,
-    },
-    {
-      key: "email",
-      header: "Alamat Sunting",
-      cell: (value) => value,
-    },
-    {
-      key: "kota",
-      header: "City",
-      cell: (value) => value,
-    },
-  ];
+import Card from "./Card";
 
-  const data = [
-    {
-      nama: "Azri",
-      email: "azri@email.com",
-      kota: "jkt",
-    },
-    {
-      nama: "Asep",
-      email: "asepngebul@email.com",
-      kota: "bks",
-    },
-  ];
-
+const Table = ({ columns = [], data = [] }) => {
   return (
-    <table>
-      <thead>
-        {columns.map((col) => (
-          <th key={col.header}>{col.header}</th>
-        ))}
-      </thead>
+    <Card>
+      <div className="w-full overflow-x-auto">
+        <table className="w-full min-w-187.5 border-collapse">
+          <thead className="bg-emerald-50 text-sm text-emerald-600">
+            <tr>
+              {columns.map((col) => (
+                <th key={col.key} className="px-4 py-3 text-left font-medium">
+                  {col.header}
+                </th>
+              ))}
+            </tr>
+          </thead>
 
-      <tbody>
-        {data.map((value) => (
-          <tr key={value}>
-            {columns.map(({ cell, key }) => (
-              <td>{cell(value[key], value)}</td>
+          <tbody>
+            {data.map((row, value) => (
+              <tr
+                className="border-b text-[12px] text-gray-600"
+                key={row.id ?? value}
+              >
+                {columns.map((col) => (
+                  <td
+                    className={`px-4 py-3 ${col.className ?? ""}`}
+                    key={col.key}
+                  >
+                    {col.cell ? col.cell(row[col.key], row) : row[col.key]}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </Card>
   );
 };
 
