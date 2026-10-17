@@ -1,17 +1,26 @@
 import Button from "@/components/Button";
 import { useState } from "react";
 
-const TicketForm = ({ onClose, onAdd = () => {} }) => {
-  const [newForm, setNewForm] = useState({
-    id: "",
-    name: "",
-    email: "",
-    subject: "",
-    attachment: null,
-    description: "",
-    created: "",
-    status: "New",
-  });
+const initialValue = {
+  id: "",
+  name: "",
+  email: "",
+  subject: "",
+  attachment: null,
+  description: "",
+  created: "",
+  status: "New",
+};
+
+const TicketForm = ({
+  onClose,
+  onAdd = () => {},
+  onEdit = () => {},
+  defaultValue = null,
+}) => {
+  const [newForm, setNewForm] = useState(defaultValue ?? initialValue);
+
+  const isEdit = Boolean(defaultValue);
 
   const onChangeForm = (e) => {
     const { name, value } = e.target;
@@ -23,26 +32,32 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
   };
 
   const onSubmit = () => {
-    console.log(newForm);
-    const today = new Date();
+    if (isEdit) {
+      onEdit(newForm);
+    } else {
+      const today = new Date();
 
-    const created = `${String(today.getDate()).padStart(2, "0")}-${String(
-      today.getMonth() + 1,
-    ).padStart(2, "0")}-${today.getFullYear()}`;
+      const created = `${String(today.getDate()).padStart(2, "0")}-${String(
+        today.getMonth() + 1,
+      ).padStart(2, "0")}-${today.getFullYear()}`;
 
-    const ticket = {
-      ...newForm,
-      id: Date.now(),
-      created,
-    };
-    // onAdd({ ...newForm, id: Date.now()})
-    onAdd(ticket);
+      const ticket = {
+        ...newForm,
+        id: Date.now(),
+        created,
+      };
+      // onAdd({ ...newForm, id: Date.now()})
+      onAdd(ticket);
+    }
+
     onClose();
   };
 
   return (
     <div className="w-full max-w-130 max-h-[95vh] rounded-2xl bg-white p-6 shadow-xl flex flex-col gap-4">
-      <h1 className="font-semibold text-2xl text-gray-800">CreateTicket</h1>
+      <h1 className="font-semibold text-2xl text-gray-800">
+        {isEdit ? "Edit" : "Create"} Ticket
+      </h1>
 
       <form className="flex flex-col gap-3">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -55,6 +70,7 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
             </label>
 
             <input
+              value={newForm.name}
               id="name"
               name="name"
               type="text"
@@ -73,6 +89,7 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
             </label>
 
             <input
+              value={newForm.email}
               id="email"
               name="email"
               placeholder="Enter your email"
@@ -91,6 +108,7 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
           </label>
 
           <input
+            value={newForm.subject}
             id="subject"
             type="text"
             name="subject"
@@ -109,6 +127,7 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
           </label>
 
           <textarea
+            value={newForm.description}
             id="message"
             rows="3"
             name="description"
@@ -151,7 +170,7 @@ const TicketForm = ({ onClose, onAdd = () => {} }) => {
             onClick={onSubmit}
             className="rounded-lg bg-green-600 px-5 py-2.5 text-[12px] font-medium text-white transition hover:bg-green-700"
           >
-            Submit Ticket
+            {isEdit ? "Save" : "Submit"} Ticket
           </Button>
         </div>
       </form>

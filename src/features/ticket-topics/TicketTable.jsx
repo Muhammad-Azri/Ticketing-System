@@ -13,15 +13,42 @@ const TicketTable = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedTicketId, setSelectedTicketId] = useState(null);
 
+  const editingTicket = ticketList.find(
+    (ticket) => ticket.id == selectedTicketId,
+  );
+
   const onAddTicket = (ticket) => {
     setTicketList((prev) => {
       return [...prev, ticket];
     });
   };
 
+  const onEditTicket = (ticketForm) => {
+    setTicketList((prev) => {
+      const result = prev.map((ticket) => {
+        if (ticket.id == selectedTicketId) {
+          return ticketForm;
+        } else {
+          return ticket;
+        }
+      });
+      return result;
+    });
+  };
+
   const onClickDelete = (id) => {
     setSelectedTicketId(id);
     setShowDeleteModal(true);
+  };
+
+  const onClickEdit = (id) => {
+    setSelectedTicketId(id);
+    setShowCreateModal(true);
+  };
+
+  const onCloseForm = () => {
+    setShowCreateModal(false);
+    setSelectedTicketId(null);
   };
 
   const onDeleteTicket = () => {
@@ -70,7 +97,7 @@ const TicketTable = () => {
       header: "Action",
       cell: (_, ticket) => (
         <div className="flex gap-2">
-          <Button variant="secondary" onClick={() => onClickDelete(ticket.id)}>
+          <Button variant="secondary" onClick={() => onClickEdit(ticket.id)}>
             <PenBox />
           </Button>
 
@@ -98,8 +125,10 @@ const TicketTable = () => {
         <Table data={ticketList} columns={columns} onDelete={onClickDelete} />
         {showCreateModal && (
           <CreateTicket
-            onClose={() => setShowCreateModal(false)}
+            defaultValue={editingTicket}
+            onClose={onCloseForm}
             onAdd={onAddTicket}
+            onEdit={onEditTicket}
           />
         )}
         {showDeleteModal && (
