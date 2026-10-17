@@ -8,7 +8,7 @@ const DeleteTicket = ({ onDelete = () => {}, onClose = () => {} }) => {
         <span>Apakah Anda yakin ingi menghapus ticket?</span>
         <div className="flex justify-end gap-1">
           <Button variant="secondary" onClick={onClose}>
-            Ga Jadi
+            Cancel
           </Button>
           <Button variant="destruction" onClick={onDelete}>
             Delete

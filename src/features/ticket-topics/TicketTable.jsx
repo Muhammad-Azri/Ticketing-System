@@ -1,70 +1,13 @@
 import Button from "@/components/Button";
-import Card from "@/components/Card";
-import { PenBox, Plus, Trash } from "lucide-react";
-import { useState } from "react";
-import CreateTicket from "./modal/CreateTicket";
-import DeleteTicket from "./modal/DeleteTicket";
+import { PenBox, Trash } from "lucide-react";
 
 import Table from "@/components/Table";
 
-const TicketTable = () => {
-  const [ticketList, setTicketList] = useState([]);
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [selectedTicketId, setSelectedTicketId] = useState(null);
-
-  const editingTicket = ticketList.find(
-    (ticket) => ticket.id == selectedTicketId,
-  );
-
-  const onAddTicket = (ticket) => {
-    setTicketList((prev) => {
-      return [...prev, ticket];
-    });
-  };
-
-  const onEditTicket = (ticketForm) => {
-    setTicketList((prev) => {
-      const result = prev.map((ticket) => {
-        if (ticket.id == selectedTicketId) {
-          return ticketForm;
-        } else {
-          return ticket;
-        }
-      });
-      return result;
-    });
-  };
-
-  const onClickDelete = (id) => {
-    setSelectedTicketId(id);
-    setShowDeleteModal(true);
-  };
-
-  const onClickEdit = (id) => {
-    setSelectedTicketId(id);
-    setShowCreateModal(true);
-  };
-
-  const onCloseForm = () => {
-    setShowCreateModal(false);
-    setSelectedTicketId(null);
-  };
-
-  const onDeleteTicket = () => {
-    setTicketList((prev) => {
-      const hasil = prev.filter((ticket) => {
-        if (ticket.id !== selectedTicketId) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-      return hasil;
-    });
-    setShowDeleteModal(false);
-  };
-
+const TicketTable = ({
+  onEdit = () => {},
+  onDelete = () => {},
+  ticketList = [],
+}) => {
   const statusStyle = {
     New: "bg-blue-50 text-blue-600",
     Open: "bg-yellow-50 text-yellow-600",
@@ -97,11 +40,11 @@ const TicketTable = () => {
       header: "Action",
       cell: (_, ticket) => (
         <div className="flex gap-2">
-          <Button variant="secondary" onClick={() => onClickEdit(ticket.id)}>
+          <Button variant="secondary" onClick={() => onEdit(ticket.id)}>
             <PenBox />
           </Button>
 
-          <Button variant="secondary" onClick={() => onClickDelete(ticket.id)}>
+          <Button variant="secondary" onClick={() => onDelete(ticket.id)}>
             <Trash />
           </Button>
         </div>
@@ -109,37 +52,7 @@ const TicketTable = () => {
     },
   ];
 
-  return (
-    <Card>
-      <div className="font-semibold">
-        <div className="flex justify-between">
-          <span> Tickets</span>
-          <Button
-            onClick={() => setShowCreateModal(true)}
-            variant="secondary"
-            icon={<Plus />}
-          >
-            Create Ticket
-          </Button>
-        </div>
-        <Table data={ticketList} columns={columns} onDelete={onClickDelete} />
-        {showCreateModal && (
-          <CreateTicket
-            defaultValue={editingTicket}
-            onClose={onCloseForm}
-            onAdd={onAddTicket}
-            onEdit={onEditTicket}
-          />
-        )}
-        {showDeleteModal && (
-          <DeleteTicket
-            onClose={() => setShowDeleteModal(false)}
-            onDelete={onDeleteTicket}
-          />
-        )}
-      </div>
-    </Card>
-  );
+  return <Table data={ticketList} columns={columns} />;
 };
 
 export default TicketTable;

@@ -1,12 +1,12 @@
 import Card from "@/components/Card";
-import Table from "@/components/Table";
+import TicketTable from "../ticket-topics/TicketTable";
 
 const DashboardTable = () => {
   return (
     <Card>
       <div className="font-semibold">
         <span>Lates Tickets</span>
-        <Table></Table>
+        <TicketTable />
       </div>
     </Card>
   );
