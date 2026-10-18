@@ -76,7 +76,7 @@ const UserInbox = () => {
       Cell: (value) => value,
     },
     {
-      key: "tile",
+      key: "title",
       header: "Name",
       Cell: (value) => value,
     },
