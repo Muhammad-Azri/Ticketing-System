@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import Table from "@/components/Table";
 import { useEffect, useState } from "react";
+import ProductForm from "./ProductForm";
 
 const UserInbox = () => {
   const [cartList, setCartList] = useState([]);
@@ -96,17 +97,22 @@ const UserInbox = () => {
       Cell: (value) => value,
     },
   ];
-  return cartList.map(({ id, user, products }) => {
-    console.log(cartList);
-    return (
-      <Card key={id}>
-        <p>
-          {user?.name.firstname} {user?.name.lastname}
-        </p>
-        <Table columns={columns} data={products}></Table>
-      </Card>
-    );
-  });
+  return (
+    <div>
+      <ProductForm />
+      {cartList.map(({ id, user, products }) => {
+        console.log(cartList);
+        return (
+          <Card key={id}>
+            <p>
+              {user?.name.firstname} {user?.name.lastname}
+            </p>
+            <Table columns={columns} data={products}></Table>
+          </Card>
+        );
+      })}
+    </div>
+  );
 };
 
 export default UserInbox;
