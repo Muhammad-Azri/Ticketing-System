@@ -1,7 +1,8 @@
 import Card from "@/components/Card";
 import Table from "@/components/Table";
 import { useEffect, useState } from "react";
-import ProductForm from "./ProductForm";
+
+import GetDataDummy from "./GetDataDummy";
 
 const UserInbox = () => {
   const [cartList, setCartList] = useState([]);
@@ -98,8 +99,8 @@ const UserInbox = () => {
     },
   ];
   return (
-    <div>
-      <ProductForm />
+    <div className="flex flex-col gap-3 p-6">
+      <GetDataDummy />
       {cartList.map(({ id, user, products }) => {
         console.log(cartList);
         return (
